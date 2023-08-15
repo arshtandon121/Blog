@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="card shadow-lg" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><h1><%= @article.title %></h1></h5>
+     
+      <p class="card-text"><p><%= @article.body %></p></p>
+      <button type="button" class="btn btn-primary">
+        <%= link_to "Edit", edit_article_path(@article), style: "color: white; text-decoration: none;" %>
+      </button>
+      <button type="button" class="btn btn-danger">
+        <%= link_to "Delete", article_path(@article), style: "color: white; text-decoration: none;", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      </button>
+      <button type="button" class="btn btn-success">
+        <%= link_to "Home", root_path, style: "color: white; text-decoration: none;" %>
+      </button>
+    </div>
+  </div>
+</div>

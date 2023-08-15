@@ -1,0 +1,35 @@
+
+  <div class="card shadow-lg" style="width: 18rem;">
+    <div class="card-body">
+      
+
+      <%= form_with model: article, class: 'needs-validation', novalidate: true do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control', required: true %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div class="invalid-feedback"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :body, class: 'form-label' %>
+    <%= form.text_area :body, class: 'form-control', required: true %>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div class="invalid-feedback"><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit 'Submit', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+
+
+
+
+    </div>
+  </div>
+
+
